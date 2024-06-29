@@ -1,3 +1,5 @@
 {
-  "welcomeToGraphqlExample": "Welcome to GraphQl Example"
+  "welcomeToGraphqlExample": "Welcome to GraphQl Example",
+  "githubDocsReader": "Github Docs Reader",
+  "failedToSignIn": "Failed to sign in"
 }

@@ -282,19 +282,19 @@ mixin _$AppState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(bool isAuthPresent) authChecked,
+    required TResult Function(bool isAuthenticated) authChecked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(bool isAuthPresent)? authChecked,
+    TResult? Function(bool isAuthenticated)? authChecked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool isAuthPresent)? authChecked,
+    TResult Function(bool isAuthenticated)? authChecked,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -375,7 +375,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(bool isAuthPresent) authChecked,
+    required TResult Function(bool isAuthenticated) authChecked,
   }) {
     return initial();
   }
@@ -384,7 +384,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(bool isAuthPresent)? authChecked,
+    TResult? Function(bool isAuthenticated)? authChecked,
   }) {
     return initial?.call();
   }
@@ -393,7 +393,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool isAuthPresent)? authChecked,
+    TResult Function(bool isAuthenticated)? authChecked,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -444,7 +444,7 @@ abstract class _$$AuthCheckedImplCopyWith<$Res> {
           _$AuthCheckedImpl value, $Res Function(_$AuthCheckedImpl) then) =
       __$$AuthCheckedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({bool isAuthPresent});
+  $Res call({bool isAuthenticated});
 }
 
 /// @nodoc
@@ -458,12 +458,12 @@ class __$$AuthCheckedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isAuthPresent = null,
+    Object? isAuthenticated = null,
   }) {
     return _then(_$AuthCheckedImpl(
-      isAuthPresent: null == isAuthPresent
-          ? _value.isAuthPresent
-          : isAuthPresent // ignore: cast_nullable_to_non_nullable
+      isAuthenticated: null == isAuthenticated
+          ? _value.isAuthenticated
+          : isAuthenticated // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -472,14 +472,14 @@ class __$$AuthCheckedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AuthCheckedImpl implements AuthChecked {
-  const _$AuthCheckedImpl({required this.isAuthPresent});
+  const _$AuthCheckedImpl({required this.isAuthenticated});
 
   @override
-  final bool isAuthPresent;
+  final bool isAuthenticated;
 
   @override
   String toString() {
-    return 'AppState.authChecked(isAuthPresent: $isAuthPresent)';
+    return 'AppState.authChecked(isAuthenticated: $isAuthenticated)';
   }
 
   @override
@@ -487,12 +487,12 @@ class _$AuthCheckedImpl implements AuthChecked {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AuthCheckedImpl &&
-            (identical(other.isAuthPresent, isAuthPresent) ||
-                other.isAuthPresent == isAuthPresent));
+            (identical(other.isAuthenticated, isAuthenticated) ||
+                other.isAuthenticated == isAuthenticated));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isAuthPresent);
+  int get hashCode => Object.hash(runtimeType, isAuthenticated);
 
   @JsonKey(ignore: true)
   @override
@@ -504,29 +504,29 @@ class _$AuthCheckedImpl implements AuthChecked {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(bool isAuthPresent) authChecked,
+    required TResult Function(bool isAuthenticated) authChecked,
   }) {
-    return authChecked(isAuthPresent);
+    return authChecked(isAuthenticated);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(bool isAuthPresent)? authChecked,
+    TResult? Function(bool isAuthenticated)? authChecked,
   }) {
-    return authChecked?.call(isAuthPresent);
+    return authChecked?.call(isAuthenticated);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool isAuthPresent)? authChecked,
+    TResult Function(bool isAuthenticated)? authChecked,
     required TResult orElse(),
   }) {
     if (authChecked != null) {
-      return authChecked(isAuthPresent);
+      return authChecked(isAuthenticated);
     }
     return orElse();
   }
@@ -564,10 +564,10 @@ class _$AuthCheckedImpl implements AuthChecked {
 }
 
 abstract class AuthChecked implements AppState {
-  const factory AuthChecked({required final bool isAuthPresent}) =
+  const factory AuthChecked({required final bool isAuthenticated}) =
       _$AuthCheckedImpl;
 
-  bool get isAuthPresent;
+  bool get isAuthenticated;
   @JsonKey(ignore: true)
   _$$AuthCheckedImplCopyWith<_$AuthCheckedImpl> get copyWith =>
       throw _privateConstructorUsedError;

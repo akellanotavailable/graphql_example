@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:graphql_example/main.dart';
+import 'package:graphql_example/models/credentials.dart';
+import 'package:graphql_example/repositories/credentials_repository.dart';
 import 'package:graphql_example/services/auth_service.dart';
 
 part 'auth_event.dart';
@@ -15,11 +17,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   final _authService = AuthService();
+  final _credentialsRepository = CredentialsRepository();
 
   FutureOr<void> _onAuthUser(AuthUser event, Emitter<AuthState> emit) async {
     final secret = await _authService.signInWithGitHub();
-    logger.d('Secret: $secret');
-
+    _credentialsRepository.add(Credentials(accessToken: secret));
     emit(const AuthState.result(isAuthSuccessful: true));
   }
 }

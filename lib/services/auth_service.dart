@@ -1,11 +1,13 @@
 import 'package:flutter_web_auth/flutter_web_auth.dart';
 import 'package:dio/dio.dart';
 import 'package:graphql_example/main.dart';
+import 'package:graphql_example/repositories/credentials_repository.dart';
 import 'env_service.dart';
 
 class AuthService {
-  final EnvService _envService = EnvService();
-  final Dio _dio = Dio();
+  final _envService = EnvService();
+  final _credentialsRepo = CredentialsRepository();
+  final _dio = Dio();
 
   /// Performs authentication with Github App (OAuth).
   /// Returns [String] containing Access Token.
@@ -41,7 +43,7 @@ class AuthService {
     return accessToken;
   }
 
-  Future<bool> isUserAuthed() async {
-    return false;
+  Future<bool> isUserAuthenticated() async {
+    return (await _credentialsRepo.get(0)) != null;
   }
 }

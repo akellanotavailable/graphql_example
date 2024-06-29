@@ -59,6 +59,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Github Docs Reader`
+  String get githubDocsReader {
+    return Intl.message(
+      'Github Docs Reader',
+      name: 'githubDocsReader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to sign in`
+  String get failedToSignIn {
+    return Intl.message(
+      'Failed to sign in',
+      name: 'failedToSignIn',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

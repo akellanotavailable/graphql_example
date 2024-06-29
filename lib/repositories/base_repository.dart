@@ -1,27 +1,22 @@
-import 'dart:convert';
-
-import 'package:graphql_example/main.dart';
+import 'package:graphql_example/services/isar_service.dart';
+import 'package:isar/isar.dart' as isr;
 
 abstract class BaseRepository<T> {
-  String get repositoryKey;
-  final repository = database;
+  final _isarService = IsarService();
+  late final isar = _isarService.database;
+  late final collection = isar.collection<T>();
 
-  @override
-  Future<void> add(T model) async {
-    repository.write(key: repositoryKey, value: model?.toJson().toString());
-  }
-  
-  @override
-  Future<void> delete() async {
-    repository.delete(key: repositoryKey);
-  }
-  
-  @override
-  Future<T?> get() async {
-    final userString = await repository.read(key: repositoryKey);
-    if (userString == null) {
-      return null;
-    }
-    return T.fromJson(json.decode(userString));
-  }
+  Future<void> add(T model) async =>
+      isar.writeTxn(() => collection.put(model));
+
+  Future<void> addAll(List<T> models) async =>
+      isar.writeTxn(() => collection.putAll(models));
+
+  Future<void> delete(isr.Id id) async =>
+      isar.writeTxn(() => collection.delete(id));
+
+  Future<void> deleteAll(List<isr.Id> ids) async =>
+      isar.writeTxn(() => collection.deleteAll(ids));
+
+  Future<T?> get(isr.Id id) async => collection.get(id);
 }
