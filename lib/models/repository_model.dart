@@ -1,7 +1,6 @@
 import 'package:graphql_example/main.dart';
-import 'package:graphql_example/models/query_model.dart';
 
-class RepositoryModel implements QueryModel {
+class RepositoryModel {
   RepositoryModel({
     required this.name,
     required this.starCount,
@@ -36,8 +35,7 @@ class RepositoryModel implements QueryModel {
     "viewerHasStarred": isStarredByUser,
   };
 
-  @override
-  String get attributes => r"""
+  static String get attributes => r"""
     name
     stargazerCount
     primaryLanguage {

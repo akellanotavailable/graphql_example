@@ -1,8 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:graphql_example/main.dart';
-import 'package:graphql_example/models/query_model.dart';
 
-class UserModel implements QueryModel {
+class UserModel {
   UserModel({
     required this.login,
     required this.name,
@@ -53,8 +51,7 @@ class UserModel implements QueryModel {
         "createdAt": createdAt.toString(),
       };
 
-  @override
-  String get attributes => r"""
+  static String get attributes => r"""
     avatarUrl
     bio
     company

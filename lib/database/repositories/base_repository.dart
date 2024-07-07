@@ -20,5 +20,6 @@ abstract class BaseRepository<T> {
   Future<void> deleteAll(List<int> ids) async =>
       repoSchema.isar.writeTxn(() => repoSchema.deleteAll(ids));
 
-  Future<void> clear() async => repoSchema.clear();
+  Future<void> clear() async =>
+      repoSchema.isar.writeTxn(() => repoSchema.clear());
 }

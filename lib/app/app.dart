@@ -29,8 +29,7 @@ class _AppState extends State<App> {
         );
       } else {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-              builder: (context) => const LoginPage()),
+          MaterialPageRoute(builder: (context) => const AuthPage()),
         );
       }
     }

@@ -22,11 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "areYouSureYouWantToSignOut": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to sign out?"),
         "failedToSignIn":
             MessageLookupByLibrary.simpleMessage("Failed to sign in"),
         "githubDocsReader":
             MessageLookupByLibrary.simpleMessage("Github Docs Reader"),
+        "no": MessageLookupByLibrary.simpleMessage("No"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "welcomeToGraphqlExample":
-            MessageLookupByLibrary.simpleMessage("Welcome to GraphQl Example")
+            MessageLookupByLibrary.simpleMessage("Welcome to GraphQl Example"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes")
       };
 }

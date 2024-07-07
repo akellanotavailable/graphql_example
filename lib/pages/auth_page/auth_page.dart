@@ -10,14 +10,14 @@ import 'package:graphql_example/pages/home_page/home_page.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class AuthPage extends StatefulWidget {
+  const AuthPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<AuthPage> createState() => _AuthPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _AuthPageState extends State<AuthPage> {
   final bloc = AuthBloc();
   late final StreamSubscription<AuthState> stateSubscription;
 
