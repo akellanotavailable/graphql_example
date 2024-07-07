@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql_example/app/bloc/app_bloc.dart';
 import 'package:graphql_example/app/widget/splash_screen.dart';
 import 'package:graphql_example/pages/auth_page/auth_page.dart';
-import 'package:graphql_example/pages/auth_page/bloc/auth_bloc.dart';
 import 'package:graphql_example/pages/home_page/home_page.dart';
 
 class App extends StatefulWidget {

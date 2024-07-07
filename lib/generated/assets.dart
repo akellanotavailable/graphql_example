@@ -13,6 +13,10 @@ class Assets {
   /// assets/fonts/Kanit-SemiBoldItalic.ttf
   static const String assetsFontsKanitSemiBoldItalic = "assets/fonts/Kanit-SemiBoldItalic.ttf";
 
+  /// Assets for assetsIconsGitRepository
+  /// assets/icons/git-repository.svg
+  static const String assetsIconsGitRepository = "assets/icons/git-repository.svg";
+
   /// Assets for assetsIconsSvgLogo
   /// assets/icons/svg_logo.svg
   static const String assetsIconsSvgLogo = "assets/icons/svg_logo.svg";

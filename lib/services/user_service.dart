@@ -1,2 +1,1 @@
-class UserService {
-}
+class UserService {}

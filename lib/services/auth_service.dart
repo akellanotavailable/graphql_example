@@ -1,7 +1,7 @@
 import 'package:flutter_web_auth/flutter_web_auth.dart';
 import 'package:dio/dio.dart';
+import 'package:graphql_example/database/repositories/credentials_repository.dart';
 import 'package:graphql_example/main.dart';
-import 'package:graphql_example/repositories/credentials_repository.dart';
 import 'env_service.dart';
 
 class AuthService {
@@ -13,7 +13,8 @@ class AuthService {
   /// Returns [String] containing Access Token.
   Future<String> signInWithGitHub() async {
     final url =
-        '${_envService.authorizationEndpoint}?client_id=${_envService.clientId}&redirect_uri=${_envService.redirectUri}&scope=read:user,user:email';
+        '${_envService.authorizationEndpoint}?client_id=${_envService.clientId}'
+        '&redirect_uri=${_envService.redirectUri}&scope=read:user,user:email';
 
     final result = await FlutterWebAuth.authenticate(
       url: url,
