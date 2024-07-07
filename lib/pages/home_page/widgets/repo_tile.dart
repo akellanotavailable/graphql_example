@@ -22,13 +22,12 @@ class RepoTile extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('@${repo.ownerLogin}', style: Fonts.thinItalic15Black),
-                Text(repo.primaryLanguage ?? '', style: Fonts.thinItalic15Black),
+                Text('@${repo.ownerLogin}'),
+                Text(repo.primaryLanguage ?? ''),
               ],
             ),
             Text(
               'Last edit: ${repo.pushedAt?.toFormattedString()}',
-              style: Fonts.thinItalic15Black,
             ),
           ],
         ),
@@ -44,7 +43,10 @@ class RepoTile extends StatelessWidget {
                     Icons.star_border,
                     color: Colors.yellow,
                   ),
-            Text(repo.starCount?.toString() ?? '0', style: Fonts.bold15White),
+            Text(
+              repo.starCount?.toString() ?? '0',
+              style: Fonts.regular15Black,
+            ),
           ],
         ),
       ),

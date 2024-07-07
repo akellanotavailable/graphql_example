@@ -20,7 +20,7 @@ class RepositoryModel {
   factory RepositoryModel.fromJson(Json json) => RepositoryModel(
         name: json['name'],
         starCount: json['stargazerCount'],
-        primaryLanguage: json['primaryLanguage']['name'],
+        primaryLanguage: json['primaryLanguage']?['name'],
         pushedAt: DateTime.tryParse(json['pushedAt'] ?? ''),
         ownerLogin: json['owner']['login'],
         isStarredByUser: json['viewerHasStarred'],
